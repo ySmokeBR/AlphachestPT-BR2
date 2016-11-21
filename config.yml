@@ -1,0 +1,8 @@
+#Tempo para salvar os baus
+autosave: 10
+#deixe true caso queira que anuncie o auto-save
+silentAutosave: false
+#Clear inventario ao morrer!
+clearOnDeath: false
+#Dropar inventario ao morrer!
+dropOnDeath: false

@@ -1,0 +1,56 @@
+name: AlphaChest
+main: net.sradonia.bukkit.alphachest.AlphaChestPlugin
+version: 1.18.0
+author: zMrSmoker
+description: >
+             Plugin that allows you to have virtual private chests.
+
+commands:
+    bau:
+        description: Opens a virtual player-specific chest.
+        usage: |
+              /<command> - Opens your private chest.
+              /<command> [player] - Opens someone else's chest.
+    limparbau:
+        description: Clears the contents of your AlphaChest.
+        usage: |
+              /<command> - Clears your private chest.
+              /<command> [player] - Clears someone else's chest.
+    salvarbaus:
+        description: Saves all AlphaChests to disk.
+        permission: alphachest.save
+    craftar:
+        aliases: [craft, craftbox, craftingbox, workbench, crafttable]
+        description: Opens a virtual workbench.
+        permission: alphachest.craftar
+    encantar:
+        description: Opens a virtual encantamento.
+        permission: alphachest.encantar
+        
+permissions:
+    alphachest.*:
+        description: Gives access to the virtual chest and workbench.
+        children:
+            alphachest.chest: true
+            alphachest.craftar: true
+            alphachest.encantar: true
+    alphachest.bau:
+        description: Gives access to the virtual chest.
+    alphachest.craftar:
+        description: Gives access to the virtual workbench.
+    alphachest.encantar:
+        description: Gives access to the virtual enchant.
+        
+    alphachest.keepOnDeath:
+        description: Players with this permission keep the contents of their virtual chest on death.
+    alphachest.dropOnDeath:
+        description: Players with this permission drop the contents of their virtual chest on death.
+    alphachest.clearOnDeath:
+        description: Players with this permission lose the contents of their virtual chest on death.
+
+    alphachest.admin:
+        description: Allows to open and clear someone else's chest.
+        default: op
+    alphachest.save:
+        description: Allows to save all virtual chests.
+        default: op
